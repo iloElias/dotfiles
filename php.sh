@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 PROGRAMS=(
-  php8.1 
-  php8.1-pgsql
-  php8.1-curl
-  php8.1-dev
+  php8.3 
+  php8.3-pgsql
+  php8.3-curl
+  php8.3-dev
 )
 
 sudo apt update -y

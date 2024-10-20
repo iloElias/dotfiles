@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt isntall nodejs npm
+sudo apt install nodejs npm
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 

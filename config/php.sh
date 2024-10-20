@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PROGRAMS=(
-  php8.3 
+  php8.3
   php8.3-pgsql
   php8.3-curl
   php8.3-dev

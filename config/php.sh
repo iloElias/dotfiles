@@ -7,6 +7,7 @@ PROGRAMS=(
   php8.3-curl
   php8.3-dev
   php8.3-pdo
+  php8.3-mbstring
 )
 
 sudo apt update -y

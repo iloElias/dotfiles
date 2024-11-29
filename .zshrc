@@ -13,10 +13,6 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey '^H' backward-kill-word
 
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -37,16 +33,7 @@ zinit light zsh-users/zsh-completions
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias ipecomposerup='cd /opt/sources/docker-v2/infra && docker compose up -d'
-alias cls='clear'
-alias code='code-insiders'
-alias nav='google-chrome'
-alias here='gnome-terminal'
-alias cdi='cd /opt/sources/'
-alias cdipe='cd /opt/sources/'
-alias checkmaster='git checkout master'
-alias agfcomposerup='cd ~/source/projects/agrofast && docker compose up -d'
-alias cdaf='cd ~/source/projects/agrofast/'
+source ~/dot-files/aliases.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

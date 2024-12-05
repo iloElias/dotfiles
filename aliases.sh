@@ -20,3 +20,4 @@ alias files='xdg-open ./'
 # variables
 
 export PATH=$PATH:/usr/share/dotnet
+export PATH=$PATH:~/godot

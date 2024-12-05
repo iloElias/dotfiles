@@ -19,4 +19,4 @@ alias files='xdg-open ./'
 
 # variables
 
-export DOTNET_ROOT=/snap/dotnet-runtime-90/current
+export PATH=$PATH:/usr/share/dotnet

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# alias
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -14,3 +16,7 @@ alias checkmaster='git checkout master'
 alias agfcomposerup='cd ~/source/projects/agrofast && docker compose up -d'
 alias cdaf='cd ~/source/projects/agrofast/'
 alias files='xdg-open ./'
+
+# variables
+
+export DOTNET_ROOT=/snap/dotnet-runtime-90/current

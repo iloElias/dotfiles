@@ -19,6 +19,6 @@ alias files='xdg-open ./'
 
 # variables
 
-export PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH=$PATH:/usr/share/dotnet
 export PATH=$PATH:~/godot

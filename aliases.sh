@@ -19,6 +19,7 @@ alias files='xdg-open ./'
 
 # variables
 
+export DOCKER_HOST=unix:///run/docker.sock
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH=$PATH:/usr/share/dotnet
 export PATH=$PATH:~/godot

@@ -16,6 +16,7 @@ alias checkmaster='git checkout master'
 alias agfcomposerup='cd ~/source/projects/agrofast && docker compose up -d'
 alias cdaf='cd ~/source/projects/agrofast/'
 alias files='xdg-open ./'
+alias docker-stop-all='docker stop $(docker ps -q)'
 
 # variables
 

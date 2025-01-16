@@ -12,11 +12,20 @@ alias nav='google-chrome'
 alias here='gnome-terminal'
 alias cdi='cd /opt/sources/'
 alias cdipe='cd /opt/sources/'
+
+alias cdm='cd /opt/mapdata/'
 alias checkmaster='git checkout master'
 alias agfcomposerup='cd ~/source/projects/agrofast && docker compose up -d'
 alias cdaf='cd ~/source/projects/agrofast/'
 alias files='xdg-open ./'
-alias docker-stop-all='docker stop $(docker ps -q)'
+
+alias up='docker compose up'
+alias up-d='docker compose up -d'
+alias up-b='docker compose up --build'
+
+# alias docker-stop-all='docker stop $(docker ps -q)'
+alias docker-stop-all='$HOME/dot-files/scripts/stop-all-containers.sh'
+alias docker-remove-all='$HOME/dot-files/scripts/remove-all-containers.sh'
 
 # variables
 

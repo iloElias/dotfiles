@@ -12,13 +12,13 @@ bash -c "$(curl --fail --show-error --silent --location https://raw.githubuserco
 echo "
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions" >> ~/.zshrc
+zinit light zsh-users/zsh-completions" >>~/.zshrc
 
 mkdir ~/.fonts
 
-wget -P ~/.fonts 'https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/BitstreamVeraSansMono.zip' 
+cp ~/dot-files/fonts/MesloLGSNF.zip ~/.fonts/MesloLGSNF.zip
 
-unzip ~/.fonts/BitstreamVeraSansMono.zip -d ~/.fonts
+unzip ~/.fonts/MesloLGSNF.zip -d ~/.fonts
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 

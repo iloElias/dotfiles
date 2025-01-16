@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-./update.sh
+export DOTFILES=$HOME/dot-files
+
+$DOTFILES/config/update.sh
 
 sudo apt install git curl zsh fonts-firacode
 
@@ -12,16 +14,16 @@ bash -c "$(curl --fail --show-error --silent --location https://raw.githubuserco
 echo "
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions" >>~/.zshrc
+zinit light zsh-users/zsh-completions" >> $HOME/.zshrc
 
-mkdir ~/.fonts
+mkdir $HOME/.fonts
 
-cp ~/dot-files/fonts/MesloLGSNF.zip ~/.fonts/MesloLGSNF.zip
+cp $HOME/dot-files/fonts/MesloLGSNF.zip $HOME/.fonts/MesloLGSNF.zip
 
-unzip ~/.fonts/MesloLGSNF.zip -d ~/.fonts
+unzip $HOME/.fonts/MesloLGSNF.zip -d $HOME/.fonts
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-cp ~/dot-files/.zshrc ~/.zshrc
+cp $HOME/dot-files/.zshrc $HOME/.zshrc
 
 gnome-session-quit --logout --no-prompt

@@ -1,54 +1,56 @@
 #!/usr/bin/env bash
 
+export DOTFILES=$HOME/dot-files
+
 echo "-------------------------------------";
 echo "|     Getting latests updates...    |";
 echo "-------------------------------------";
-./config/update.sh
+$DOTFILES/config/update.sh
 
 echo "-------------------------------------";
 echo "|        Installing Chrome...       |";
 echo "-------------------------------------";
-./config/php.sh
+$DOTFILES/config/php.sh
 
 echo "-------------------------------------";
 echo "|   Setting up the environment...   |";
 echo "-------------------------------------";
-./create-source.sh
+$DOTFILES/create-source.sh
 
 echo "-------------------------------------";
 echo "|         Installing PHP...         |";
 echo "-------------------------------------";
-./config/php.sh
+$DOTFILES/config/php.sh
 
 echo "-------------------------------------";
 echo "|       Installing Composer...      |";
 echo "-------------------------------------";
-./config/composer.sh
+$DOTFILES/config/composer.sh
 
 echo "-------------------------------------";
 echo "|        Installing Docker...       |";
 echo "-------------------------------------";
-./config/docker.sh
+$DOTFILES/config/docker.sh
 
 echo "-------------------------------------";
 echo "|         Installing Node...        |";
 echo "-------------------------------------";
-./config/node.sh
+$DOTFILES/config/node.sh
 
 echo "-------------------------------------";
 echo "|        Installing VSCode...       |";
 echo "-------------------------------------";
-./config/vscode.sh
+$DOTFILES/config/vscode.sh
 
 echo "-------------------------------------";
 echo "|       Setting up terminal...      |";
 echo "-------------------------------------";
-./config/jetbrains-toolbox.sh
+$DOTFILES/config/jetbrains-toolbox.sh
 
 echo "-------------------------------------";
 echo "|       Setting up terminal...      |";
 echo "-------------------------------------";
-./config/terminal.sh
+$DOTFILES/config/terminal.sh
 
-cp ./.inputrc ~/
-bind -f ~/.inputrc
+cp $DOTFILES/.inputrc ~/
+bind -f $HOME/.inputrc

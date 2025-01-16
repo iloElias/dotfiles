@@ -34,10 +34,10 @@ alias up-b='docker compose up --build'
 
 # alias docker-stop-all='docker stop $(docker ps -q)'
 alias docker-stop-all='$HOME/dot-files/scripts/stop-all-containers.sh'
+alias down='docker-stop-all'
 alias docker-remove-all='$HOME/dot-files/scripts/remove-all-containers.sh'
 
 # variables
-
 export DOCKER_HOST=unix:///run/docker.sock
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH=$PATH:/usr/share/dotnet

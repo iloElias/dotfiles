@@ -22,6 +22,12 @@ alias agfcomposerup='cd ~/source/projects/agrofast && docker compose up -d'
 alias cdaf='cd ~/source/projects/agrofast/'
 alias files='xdg-open ./'
 
+alias commit='git commit -m'
+alias push='git push'
+alias pull='git pull'
+alias gadd='git add .'
+alias clone='git clone'
+
 alias up='docker compose up'
 alias up-d='docker compose up -d'
 alias up-b='docker compose up --build'

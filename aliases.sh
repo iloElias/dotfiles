@@ -5,6 +5,9 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+alias update='$HOME/dot-files/config/update.sh'
+
 alias ipecomposerup='cd /opt/sources/docker-v2/infra && docker compose up -d'
 alias cls='clear'
 alias code='code-insiders'

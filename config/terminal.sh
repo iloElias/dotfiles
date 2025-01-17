@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export DOTFILES=$HOME/dot-files
+export DOTFILES=/opt/dotfiles
 
 $DOTFILES/config/update.sh
 
@@ -18,12 +18,12 @@ zinit light zsh-users/zsh-completions" >> $HOME/.zshrc
 
 mkdir $HOME/.fonts
 
-cp $HOME/dot-files/fonts/MesloLGSNF.zip $HOME/.fonts/MesloLGSNF.zip
+cp /opt/dotfiles/fonts/MesloLGSNF.zip $HOME/.fonts/MesloLGSNF.zip
 
 unzip $HOME/.fonts/MesloLGSNF.zip -d $HOME/.fonts
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-cp $HOME/dot-files/.zshrc $HOME/.zshrc
+cp /opt/dotfiles/.zshrc $HOME/.zshrc
 
 gnome-session-quit --logout --no-prompt

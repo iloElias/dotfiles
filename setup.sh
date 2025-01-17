@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export DOTFILES=$HOME/dot-files
+export DOTFILES=/opt/dotfiles
 
 echo "-------------------------------------";
 echo "|     Getting latests updates...    |";

@@ -6,7 +6,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias update='$HOME/dot-files/config/update.sh'
+alias update='/opt/dotfiles/config/update.sh'
 
 alias ipecomposerup='cd /opt/sources/docker-v2/infra && docker compose up -d'
 alias cls='clear'
@@ -33,9 +33,9 @@ alias up-d='docker compose up -d'
 alias up-b='docker compose up --build'
 
 # alias docker-stop-all='docker stop $(docker ps -q)'
-alias docker-stop-all='$HOME/dot-files/scripts/stop-all-containers.sh'
+alias docker-stop-all='/opt/dotfiles/scripts/stop-all-containers.sh'
 alias down='docker-stop-all'
-alias docker-remove-all='$HOME/dot-files/scripts/remove-all-containers.sh'
+alias docker-remove-all='/opt/dotfiles/scripts/remove-all-containers.sh'
 
 # variables
 export DOCKER_HOST=unix:///run/docker.sock

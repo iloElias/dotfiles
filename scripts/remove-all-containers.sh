@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $HOME/dot-files/data/excluded-containers.sh
+source /opt/dotfiles/data/excluded-containers.sh
 
 containers=$(docker ps -a --format '{{.Names}}')
 

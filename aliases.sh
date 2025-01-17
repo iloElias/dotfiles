@@ -2,11 +2,12 @@
 
 # alias
 
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls -alF --color=auto --group-directories-first'
+alias la='ls -A --color=auto --group-directories-first'
+alias l='ls -CF --color=auto --group-directories-first'
 
 alias update='/opt/dotfiles/config/update.sh'
+alias update-rc='/opt/dotfiles/config/update-rc.sh'
 
 alias ipecomposerup='cd /opt/sources/docker-v2/infra && docker compose up -d'
 alias cls='clear'

@@ -24,6 +24,7 @@ alias cdaf='cd ~/source/projects/agrofast/'
 alias files='xdg-open ./'
 
 alias commit='git commit -m'
+alias checkout='git checkout'
 alias push='git push'
 alias pull='git pull'
 alias gadd='git add .'

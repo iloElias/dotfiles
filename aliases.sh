@@ -29,6 +29,7 @@ alias pull='git pull'
 alias gadd='git add .'
 alias clone='git clone'
 
+alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias up='docker compose up'
 alias up-d='docker compose up -d'
 alias up-b='docker compose up --build'

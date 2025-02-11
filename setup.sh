@@ -13,11 +13,6 @@ echo "-------------------------------------";
 $DOTFILES/config/php.sh
 
 echo "-------------------------------------";
-echo "|   Setting up the environment...   |";
-echo "-------------------------------------";
-$DOTFILES/create-source.sh
-
-echo "-------------------------------------";
 echo "|         Installing PHP...         |";
 echo "-------------------------------------";
 $DOTFILES/config/php.sh

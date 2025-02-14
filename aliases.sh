@@ -10,6 +10,8 @@ alias update='/opt/dotfiles/config/update.sh'
 alias update-rc='/opt/dotfiles/config/update-rc.sh'
 
 alias ipecomposerup='cd /opt/sources/docker-v2/infra && docker compose up -d'
+alias ipeclear='docker exec -it php74 bash -c "redis-cli flushall"'
+
 alias cls='clear'
 alias code='code-insiders'
 alias nav='google-chrome'

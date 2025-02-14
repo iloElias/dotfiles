@@ -20,17 +20,21 @@ alias cdi='cd /opt/sources/'
 alias cdipe='cd /opt/sources/'
 
 alias cdm='cd /opt/mapdata/'
-alias checkmaster='git checkout master'
-alias agfcomposerup='cd ~/source/projects/agrofast && docker compose up -d'
-alias cdaf='cd ~/source/projects/agrofast/'
+alias agfcomposerup='cd /opt/agrofast/ && docker compose up -d'
+alias cdaf='cd /opt/agrofast/'
 alias files='xdg-open ./'
 
 alias commit='git commit -m'
 alias checkout='git checkout'
+alias checkmaster='git checkout master'
 alias push='git push'
-alias pull='git pull'
+alias pull='/opt/dotfiles/scripts/pull-all-from-repo.sh'
 alias gadd='git add .'
 alias clone='git clone'
+
+myip() {
+  hostname -I | awk '{print $1}'
+}
 
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias up='docker compose up'

@@ -12,6 +12,10 @@ alias update-rc='/opt/dotfiles/config/update-rc.sh'
 alias ipecomposerup='cd /opt/sources/docker-v2/infra && docker compose up -d'
 alias ipeclear='docker exec -it php74 bash -c "redis-cli flushall"'
 
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+
 alias cls='clear'
 alias code='code-insiders'
 alias nav='google-chrome'
@@ -39,7 +43,9 @@ myip() {
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias up='docker compose up'
 alias up-d='docker compose up -d'
+alias detach='docker compose up -d'
 alias up-b='docker compose up --build'
+alias build='docker compose up --build'
 
 # alias docker-stop-all='docker stop $(docker ps -q)'
 alias docker-stop-all='/opt/dotfiles/scripts/stop-all-containers.sh'

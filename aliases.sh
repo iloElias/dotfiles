@@ -38,7 +38,10 @@ alias gadd='git add .'
 alias clone='git clone'
 
 myip() {
+  echo "IP address: "
   hostname -I | awk '{print $1}'
+  echo -e "\nQR code:"
+  qrencode -t ansiutf8 "http://$(hostname -I | awk '{print $1}')"
 }
 
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'

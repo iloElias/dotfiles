@@ -15,17 +15,23 @@ alias ipeclear='docker exec -it php74 bash -c "redis-cli flushall"'
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
+alias .....='cd ../../../../'
 
 alias cls='clear'
 alias code='code-insiders'
 alias nav='google-chrome'
-alias here='gnome-terminal'
+
+alias here='/bin/gnome-terminal --working-directory=$(pwd)'
+alias new="/bin/gnome-terminal --working-directory=\$HOME"
+
 alias cdi='cd /opt/sources/'
 alias cdipe='cd /opt/sources/'
-
 alias cdm='cd /opt/mapdata/'
-alias agfcomposerup='cd /opt/agrofast/ && docker compose up -d'
 alias cdaf='cd /opt/agrofast/'
+alias cds='cd /opt/services/'
+alias cdd='cd /opt/dotfiles/'
+
+alias agfcomposerup='cd /opt/agrofast/ && docker compose up -d'
 alias files='xdg-open ./'
 
 alias commit='git commit -m'
@@ -38,21 +44,17 @@ alias gadd='git add .'
 alias clone='git clone'
 
 myip() {
-  echo "IP address: "
-  hostname -I | awk '{print $1}'
-  echo -e "\nQR code:"
-  qrencode -t ansiutf8 "http://$(hostname -I | awk '{print $1}')"
+  /opt/dotfiles/scripts/my-ip.sh
 }
 
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias up='docker compose up'
 alias up-d='docker compose up -d'
-alias detach='docker compose up -d'
 alias up-b='docker compose up --build'
 alias build='docker compose up --build'
 
-# alias docker-stop-all='docker stop $(docker ps -q)'
 alias docker-stop-all='/opt/dotfiles/scripts/stop-all-containers.sh'
+alias ds='docker-stop-all'
 alias down='docker-stop-all'
 alias docker-remove-all='/opt/dotfiles/scripts/remove-all-containers.sh'
 

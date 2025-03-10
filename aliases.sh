@@ -53,6 +53,9 @@ alias up-d='docker compose up -d'
 alias up-b='docker compose up --build'
 alias build='docker compose up --build'
 
+# Comandos utilitários para desenvolvimento com docker
+alias dbcls='/opt/dotfiles/scripts/reset-database.sh'
+
 alias docker-stop-all='/opt/dotfiles/scripts/stop-all-containers.sh'
 alias ds='docker-stop-all'
 alias down='docker-stop-all'

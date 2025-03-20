@@ -18,6 +18,7 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
 alias cls='clear'
+alias ccat='pygmentize -g'
 alias code='code-insiders'
 alias nav='google-chrome'
 
@@ -35,6 +36,7 @@ alias agfcomposerup='cd /opt/agrofast/ && docker compose up -d'
 alias files='xdg-open ./'
 
 alias commit='git commit -m'
+alias check='git checkout'
 alias checkout='git checkout'
 alias checkmaster='git checkout master'
 alias push='git push'

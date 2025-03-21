@@ -32,6 +32,17 @@ alias cdaf='cd /opt/agrofast/'
 alias cds='cd /opt/services/'
 alias cdd='cd /opt/dotfiles/'
 
+E() {
+  echo -n "Confirm action? (Y/n) "
+  read confirm
+  if [[ -z "$confirm" || "$confirm" =~ ^[Yy] ]]; then
+    exit
+  else
+    echo "Canceled exit."
+  fi
+}
+alias e='E'
+
 alias agfcomposerup='cd /opt/agrofast/ && docker compose up -d'
 alias files='xdg-open ./'
 
@@ -41,7 +52,8 @@ alias checkout='git checkout'
 alias checkmaster='git checkout master'
 alias gmaster='git checkout master'
 alias gmain='git checkout main'
-alias push='/opt/dotfiles/scripts/push-with-verifications.sh'
+alias push='git push'
+alias vpush='/opt/dotfiles/scripts/push-with-verifications.sh'
 alias status='/opt/dotfiles/scripts/status-all-from-repo.sh'
 alias pull='/opt/dotfiles/scripts/pull-all-from-repo.sh'
 alias gadd='git add .'

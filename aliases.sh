@@ -25,9 +25,9 @@ alias nav='google-chrome'
 alias here='/bin/gnome-terminal --working-directory=$(pwd)'
 alias new="/bin/gnome-terminal --working-directory=\$HOME"
 
-alias ccd='/opt/dotfiles/scripts/custom-cd-to-ipeweb.sh'
+alias ccd='/opt/dotfiles/scripts/custom-cd.sh'
 
-alias cdi='/opt/dotfiles/scripts/custom-cd-to-ipeweb.sh /opt/sources'
+alias cdi='/opt/dotfiles/scripts/custom-cd.sh /opt/sources'
 alias cdipe='cd /opt/sources/'
 alias cdm='cd /opt/mapdata/'
 alias cdaf='cd /opt/agrofast/'

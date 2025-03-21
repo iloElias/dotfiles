@@ -86,7 +86,7 @@ if [ $ret_code -eq 0 ] && [ -n "$selected_project" ]; then
   open_vscode=$?
 
   if [ $open_vscode -eq 0 ]; then
-    code .
+    code-insiders .
   fi
   
   clear

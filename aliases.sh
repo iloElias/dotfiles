@@ -36,7 +36,7 @@ E() {
   echo -n "Confirm action? (Y/n) "
   read confirm
   if [[ -z "$confirm" || "$confirm" =~ ^[Yy] ]]; then
-    exit
+    exit 0
   else
     echo "Canceled exit."
   fi

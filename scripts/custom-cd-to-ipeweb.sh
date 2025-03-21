@@ -1,6 +1,8 @@
 #!/bin/bash
 
-base_path="/opt/sources"
+# O script tem um problema, não consegue mudar de diretório, apenas abre o projeto no VSCode.
+
+base_path="$(pwd)"
 if [ $# -ge 1 ]; then
   base_path="$1"
 fi
@@ -77,11 +79,11 @@ rm -f "$temp_file"
 cd "$selected_project" || exit
 
 if [ $ret_code -eq 0 ] && [ -n "$selected_project" ]; then 
+  cd "$selected_project" || exit
+
   dialog --clear --title "Open in VSCode?" \
     --yesno "Open in VSCode?" 5 40
   open_vscode=$?
-
-  cd "$selected_project" || exit
 
   if [ $open_vscode -eq 0 ]; then
     code .

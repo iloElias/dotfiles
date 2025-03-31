@@ -7,4 +7,5 @@ export EXCLUDED_CONTAINERS=(
   "redis"
   "rabbitmq"
   "minio"
+  "jenkins"
 )

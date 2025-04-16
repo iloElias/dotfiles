@@ -70,6 +70,7 @@ alias up='docker compose up'
 alias up-d='docker compose up -d'
 alias up-b='docker compose up --build'
 alias build='docker compose up --build'
+alias dexec='docker exec -it'
 
 # Comandos utilitários para desenvolvimento com docker
 alias dbcls='/opt/dotfiles/scripts/reset-database.sh'

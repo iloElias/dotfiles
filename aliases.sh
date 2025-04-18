@@ -61,9 +61,7 @@ alias pull='/opt/dotfiles/scripts/pull-all-from-repo.sh'
 alias gadd='git add .'
 alias clone='git clone'
 
-myip() {
-  /opt/dotfiles/scripts/my-ip.sh
-}
+alias myip='/opt/dotfiles/scripts/my-ip.sh'
 
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias up='docker compose up'

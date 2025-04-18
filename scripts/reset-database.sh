@@ -24,6 +24,7 @@ fi
 if docker container inspect "$PHP_CONTAINER" &>/dev/null; then
   echo "Running migrations in container ${PHP_CONTAINER}..."
   docker exec -it "$PHP_CONTAINER" php artisan migrate
+  docker exec -it "$PHP_CONTAINER" php artisan db:seed
 else
   echo "Container $PHP_CONTAINER does not exist. Skipping PHP-FPM actions..."
 fi

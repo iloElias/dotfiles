@@ -18,6 +18,7 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
 alias cls='clear'
+alias clr='clear'
 alias ccat='pygmentize -g'
 alias code='code-insiders'
 alias nav='google-chrome'

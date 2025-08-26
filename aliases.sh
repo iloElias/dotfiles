@@ -84,3 +84,4 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH=$PATH:/usr/share/dotnet
 export PATH=$PATH:~/godot
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export CAPACITOR_ANDROID_STUDIO_PATH="$HOME/.local/share/JetBrains/Toolbox/apps/AndroidStudio/ch-0/242.23339.11.2421.12550806"

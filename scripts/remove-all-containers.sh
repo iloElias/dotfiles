@@ -28,6 +28,6 @@ for container in $containers; do
     fi
   done
   if [[ "$excluded" == false || "$ignore_excluded" == true ]]; then
-    docker remove $container
+    docker rm $container
   fi
 done

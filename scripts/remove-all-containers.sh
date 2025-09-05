@@ -8,7 +8,7 @@ ignore_excluded=false
 
 while [[ "$#" -gt 0 ]]; do
   case $1 in
-    --ignore-excluded) ignore_excluded=true ;;
+    --ignore-excluded|--ignore-exclude) ignore_excluded=true ;;
   esac
   shift
 done
@@ -28,6 +28,6 @@ for container in $containers; do
     fi
   done
   if [[ "$excluded" == false || "$ignore_excluded" == true ]]; then
-    docker rm $container
+    docker rm "$container"
   fi
 done

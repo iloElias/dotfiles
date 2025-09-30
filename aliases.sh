@@ -9,7 +9,7 @@ alias l='ls -CF --color=auto --group-directories-first'
 alias update='/opt/dotfiles/config/update.sh'
 alias update-rc='/opt/dotfiles/config/update-rc.sh'
 
-alias ipecomposerup='cd /opt/sources/docker-v2/infra && docker compose up -d'
+alias ipecomposerup='cd /opt/sources/docker-v2/infra && docker compose --profile dev up -d'
 alias ipeclear='docker exec -it php74 bash -c "redis-cli flushall"'
 
 alias ..='cd ../'

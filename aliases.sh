@@ -11,6 +11,7 @@ alias update-rc='/opt/dotfiles/config/update-rc.sh'
 
 alias ipecomposerup='cd /opt/sources/docker-v2/infra && docker compose --profile dev up -d'
 alias ipeclear='docker exec -it php74 bash -c "redis-cli flushall"'
+alias iperedisip='docker inspect php74 | grep "IPAddress"'
 
 alias ..='cd ../'
 alias ...='cd ../../'

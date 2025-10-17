@@ -47,7 +47,7 @@ E() {
 }
 alias e='E'
 
-alias agfcomposerup='cd /opt/agrofast/ && docker compose up -d'
+alias agfcomposerup='cd /opt/agrofast/ && docker compose up -d && exit'
 alias files='xdg-open ./'
 
 alias commit='git commit -m'

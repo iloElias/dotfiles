@@ -1,27 +1,20 @@
 #!/bin/bash
 
-source /opt/dotfiles/data/excluded-containers.sh
-
-containers=$(docker ps -a --format '{{.Names}}')
+source /opt/dotfiles/lib/utils.sh
 
 ignore_excluded=false
 
-while [[ "$#" -gt 0 ]]; do
-  case $1 in
+for arg in "$@"; do
+  case $arg in
     --ignore-excluded|--ignore-exclude) ignore_excluded=true ;;
   esac
-  shift
 done
 
-for container in $containers; do
-  excluded=false
-  for excluded_container in "${EXCLUDED_CONTAINERS[@]}"; do
-    if [[ "$excluded_container" == "$container" ]]; then
-      excluded=true
-      break
-    fi
-  done
-  if [[ "$excluded" == false || "$ignore_excluded" == true ]]; then
-    docker stop "$container"
-  fi
-done
+mapfile -t containers_to_stop < <(get_target_containers "$ignore_excluded")
+
+if [[ ${#containers_to_stop[@]} -gt 0 ]]; then
+  echo "Parando contêineres: ${containers_to_stop[*]}"
+  docker stop "${containers_to_stop[@]}"
+else
+  echo "Nenhum contêiner a ser parado."
+fi

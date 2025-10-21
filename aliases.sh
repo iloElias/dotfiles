@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source /opt/dotfiles/lib/utils.sh
+
 # alias
 
 alias ll='ls -alF --color=auto --group-directories-first'

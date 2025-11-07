@@ -1,0 +1,418 @@
+{
+  "editor.fontFamily": "Fira Code",
+  "terminal.integrated.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "terminal.integrated.fontLigatures": true,
+  "terminal.integrated.customGlyphs": true,
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "material-icon-theme",
+
+  "material-icon-theme.files.associations": {
+    "router.php": "routing",
+    "routes.php": "routing",
+    "maestro.php": "php_elephant",
+    "maestro.config.php": "php_elephant"
+  },
+  "cSpell.language": "en,pt",
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.openRepositoryInParentFolders": "always",
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.insertSpaces": true,
+  "cSpell.userWords": [
+    "Agrifast",
+    "Agrodefesa",
+    "agrofast",
+    "Binded",
+    "clsx",
+    "Cnpj",
+    "Dispatchable",
+    "Dynamsoft",
+    "endsection",
+    "fonesa",
+    "Fonesa",
+    "geist",
+    "Hedy",
+    "heroui",
+    "hugeicons",
+    "Ionicons",
+    "Ipeweb",
+    "Markfy",
+    "mdxfy",
+    "nextui",
+    "nginx",
+    "nuable",
+    "Opherator",
+    "Outphut",
+    "postgres",
+    "Queueable",
+    "rabbitmq",
+    "Sanitizable",
+    "sonner",
+    "spotifake",
+    "turbopack",
+    "vonage",
+    "Vonage",
+    "yoda",
+    "zxing"
+  ],
+  "redhat.telemetry.enabled": true,
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.png": "luna.editor",
+    "*.svg": "default"
+  },
+  "[php]": {
+    "php-cs-fixer.config": "${workspaceFolder}/.php-cs-fi xer.php",
+    "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+  },
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.rules": {},
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmPasteNative": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "tailwindCSS.includeLanguages": {
+    "typescript": "typescriptreact",
+    "javascript": "javascriptreact"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.acceptSuggestionOnEnter": "on",
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "settingsSync.ignoredSettings": ["-window.zoomLevel"],
+  "workbench.colorTheme": "Dracula Theme",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "editor.stickyScroll.enabled": false,
+  "editor.fontVariations": false,
+  "editor.accessibilitySupport": "off",
+  "files.associations": {
+    ".env": "dotenv",
+    "*.css": "tailwindcss"
+  },
+  "tailwind-class-sorter.classRegex": {},
+  "window.titleBarStyle": "custom",
+  "files.exclude": {
+    "**/.DS_Store": false,
+    "**/.git": false,
+    "**/.hg": false,
+    "**/.svn": false,
+    "**/CVS": false,
+    "**/Thumbs.db": false
+  },
+  "files.autoGuessEncoding": true,
+  "window.customTitleBarVisibility": "auto",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "debug.console.fontFamily": "Fira Code",
+  "terminal.integrated.defaultProfile.osx": "/usr/bin/zsh",
+  "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "php-cs-fixer.onsave": true,
+  "security.workspace.trust.banner": "always",
+  "tailwindSorter.customPrefixes": ["twMerge(", "clsx(", "cva(", "cn("],
+  "php-cs-fixer.autoFixBySemicolon": true,
+  "php-cs-fixer.autoFixByBracket": true,
+  "php-cs-fixer.allowRisky": true,
+  "php-cs-fixer.formatHtml": true,
+  "php-cs-fixer.lastDownload": 1762104640829,
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "class:list",
+    "classNames"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    "[cC]lass[nN]ames?\\s*=\\s*(?:'|\"|`)([^\"'`]*)(?:'|\"|`)",
+    ["cn\\(([^)]*?)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
+    "\\b[cC]lass[nN]ame[?s]?\\s*=\\s*(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"
+  ],
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify"
+  },
+  "extensions.trustedPublishers": [
+    "aestudio",
+    "ahmadalli",
+    "alefragnani",
+    "anseki",
+    "austenc",
+    "bmewburn",
+    "bradlc",
+    "chris-noring",
+    "christian-kohler",
+    "compulim",
+    "cweijan",
+    "davidanson",
+    "deerawan",
+    "dejmedus",
+    "devsense",
+    "dotjoshjohnson",
+    "dracula-theme",
+    "eamodio",
+    "ecmel",
+    "editorconfig",
+    "eiminsasete",
+    "emallin",
+    "esbenp",
+    "formulahendry",
+    "foxundermoon",
+    "irongeek",
+    "jannisx11",
+    "jasonnutter",
+    "jeff-hykin",
+    "johnnymorganz",
+    "junstyle",
+    "kevinrose",
+    "kisstkondoros",
+    "lihui",
+    "maximus136",
+    "mehedidracula",
+    "meronz",
+    "mikestead",
+    "mrmlnc",
+    "naumovs",
+    "nguyenngoclong",
+    "njpwerner",
+    "onecentlin",
+    "pkief",
+    "pranaygp",
+    "raynigon",
+    "recca0120",
+    "redhat",
+    "remisa",
+    "rifi2k",
+    "ritwickdey",
+    "roblox-ts",
+    "sakethkanchi",
+    "seyyedkhandon",
+    "streetsidesoftware",
+    "sumneko",
+    "tetradresearch",
+    "timonwong",
+    "william-voyek",
+    "woozy-masta",
+    "xdebug",
+    "xshrim",
+    "zobo",
+    "evaera",
+    "muoshuu",
+    "phiter",
+    "mgwg",
+    "yoavbls",
+    "gruntfuggly",
+    "quicktype",
+    "hugeicons-pro",
+    "docker",
+    "tamasfe",
+    "adpyke",
+    "zignd",
+    "undermywheel"
+  ],
+  "git.autofetch": true,
+  "editor.codeActionsOnSave": {},
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.enabled": false,
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "editor.linkedEditing": true,
+  "editor.rulers": [
+    {
+      "column": 80,
+      "color": "#00FF0010"
+    },
+    {
+      "column": 100,
+      "color": "#BDB76B15"
+    },
+    {
+      "column": 120,
+      "color": "#a3b8ff19"
+    }
+  ],
+  "editor.unicodeHighlight.includeComments": true,
+  "workbench.colorCustomizations": {
+    "[Default Dark Modern]": {
+      "tab.activeBorderTop": "#00FF00",
+      "tab.unfocusedActiveBorderTop": "#00FF0088",
+      "textCodeBlock.background": "#00000055"
+    },
+    "editor.wordHighlightStrongBorder": "#FF6347",
+    "editor.wordHighlightBorder": "#FFD700",
+    "editor.selectionHighlightBorder": "#A9A9A9"
+  },
+  "workbench.editor.revealIfOpen": true,
+  "emmet.variables": {
+    "lang": "en"
+  },
+  "cSpell.diagnosticLevel": "Hint",
+  "trailing-spaces.backgroundColor": "rgba(255,0,0,0.1)",
+  "trailing-spaces.includeEmptyLines": false,
+  "terminal.integrated.tabs.hideCondition": "never",
+  "terminal.integrated.enablePersistentSessions": false,
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.detectJdksAtStart": false,
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.debug.settings.hotCodeReplace": "auto",
+  "java.dependency.packagePresentation": "hierarchical",
+  "java.maxConcurrentBuilds": 8,
+  "java.sources.organizeImports.staticStarThreshold": 1,
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk-amd64"
+      },
+      "args": [
+        "--rcfile",
+        "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+      ]
+    },
+    "JavaSE-1.8 LTS": {
+      "overrideName": true,
+      "env": {
+        "JAVA_HOME": "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/java/8"
+      },
+      "path": "bash",
+      "args": [
+        "--rcfile",
+        "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+      ]
+    },
+    "JavaSE-11 LTS": {
+      "overrideName": true,
+      "env": {
+        "JAVA_HOME": "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/java/11"
+      },
+      "path": "bash",
+      "args": [
+        "--rcfile",
+        "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+      ]
+    },
+    "JavaSE-17 LTS": {
+      "overrideName": true,
+      "env": {
+        "JAVA_HOME": "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/java/17"
+      },
+      "path": "bash",
+      "args": [
+        "--rcfile",
+        "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+      ]
+    },
+    "JavaSE-21 LTS": {
+      "overrideName": true,
+      "env": {
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk-amd64"
+      },
+      "path": "bash",
+      "args": [
+        "--rcfile",
+        "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+      ]
+    },
+    "JavaSE-24": {
+      "overrideName": true,
+      "env": {
+        "JAVA_HOME": "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest"
+      },
+      "path": "bash",
+      "args": [
+        "--rcfile",
+        "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+      ]
+    }
+  },
+  "maven.terminal.customEnv": [
+    {
+      "environmentVariable": "JAVA_HOME",
+      "value": "/usr/lib/jvm/java-21-openjdk-amd64"
+    }
+  ],
+  "[java]": {
+    "editor.defaultFormatter": "Oracle.oracle-java"
+  },
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-1.8",
+      "path": "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/java/8"
+    },
+    {
+      "name": "JavaSE-11",
+      "path": "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/java/11"
+    },
+    {
+      "name": "JavaSE-17",
+      "path": "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/java/17"
+    },
+    {
+      "name": "JavaSE-21",
+      "path": "/usr/lib/jvm/java-21-openjdk-amd64"
+    },
+    {
+      "name": "JavaSE-24",
+      "path": "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest",
+      "default": true
+    }
+  ],
+  "java.import.gradle.java.home": "/usr/lib/jvm/java-21-openjdk-amd64",
+  "maven.executable.path": "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/maven/latest/bin/mvn",
+  "java.import.gradle.home": "/home/murilo/.config/Code - Insiders/User/globalStorage/pleiades.java-extension-pack-jdk/gradle/latest",
+  "[sql]": {
+    "editor.defaultFormatter": "cweijan.vscode-redis-client"
+  },
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "workbench.settings.applyToAllProfiles": [
+    "terminal.integrated.defaultProfile.linux"
+  ],
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "explorer.compactFolders": false,
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  "database-client.autoSync": true,
+  "[blade]": {
+    "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+  },
+  "window.zoomLevel": -1.2
+}

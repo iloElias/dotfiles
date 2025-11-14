@@ -1,16 +1,28 @@
 #!/bin/bash
 
-# O script tem um problema, não consegue mudar de diretório, apenas abre o projeto no VSCode.
-
 base_path="$(pwd)"
-if [ $# -ge 1 ]; then
-  base_path="$1"
-fi
-
 prefix=""
-if [ $# -ge 2 ]; then
-  prefix="$2"
-fi
+open_in="vscode"
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --cu)
+      open_in="cursor"
+      shift
+      ;;
+    *)
+      if [[ -z "$base_path_set" ]]; then
+        base_path="$1"
+        base_path_set=1
+      elif [[ -z "$prefix_set" ]]; then
+        prefix="$1"
+        prefix_set=1
+      fi
+      shift
+      ;;
+  esac
+done
 
 if ! command -v dialog &>/dev/null; then
   echo "The dialog utility is not installed."
@@ -81,13 +93,21 @@ cd "$selected_project" || exit
 if [ $ret_code -eq 0 ] && [ -n "$selected_project" ]; then 
   cd "$selected_project" || exit
 
-  dialog --clear --title "Open in VSCode?" \
-    --yesno "Open in VSCode?" 5 40
-  open_vscode=$?
+  dialog --clear --title "Open in Editor?" \
+    --yesno "Open in $( [[ $open_in = "cursor" ]] && echo 'Cursor' || echo 'VSCode' )?" 5 40
+  open_editor=$?
 
-  if [ $open_vscode -eq 0 ]; then
-    code-insiders .
+  if [ $open_editor -eq 0 ]; then
+    if [[ "$open_in" = "cursor" ]]; then
+      if command -v cursor &>/dev/null; then
+        cursor .
+      else
+        echo "'cursor' editor is not installed or not found in PATH."
+      fi
+    else
+      code-insiders .
+    fi
   fi
-  
+
   clear
 fi

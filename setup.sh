@@ -10,7 +10,7 @@ $DOTFILES/config/update.sh
 echo "-------------------------------------";
 echo "|        Installing Chrome...       |";
 echo "-------------------------------------";
-$DOTFILES/config/php.sh
+$DOTFILES/config/chrome.sh
 
 echo "-------------------------------------";
 echo "|         Installing PHP...         |";
@@ -38,7 +38,7 @@ echo "-------------------------------------";
 $DOTFILES/config/vscode.sh
 
 echo "-------------------------------------";
-echo "|       Setting up terminal...      |";
+echo "|       Setting up jetbrains...      |";
 echo "-------------------------------------";
 $DOTFILES/config/jetbrains-toolbox.sh
 

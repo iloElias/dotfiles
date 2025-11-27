@@ -85,6 +85,7 @@ alias docker-remove-all='/opt/dotfiles/scripts/remove-all-containers.sh'
 # variables
 export DOCKER_HOST=unix:///run/docker.sock
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH=$PATH:/usr/share/dotnet
 export PATH=$PATH:~/godot
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"

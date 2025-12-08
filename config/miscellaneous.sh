@@ -21,6 +21,40 @@ GNOME_EXTENSIONS=(
     "1653" # tweaks-in-system-menu
 )
 
+# Bluetooth-Battery-Meter@maniacx.github.com
+# burn-my-windows@schneegans.github.com
+# clipboard-history@alexsaveau.dev
+# color-picker@tuberry
+# gsconnect@andyholmes.github.io
+# mediacontrols@cliffniff.github.com
+# notification-banner-reloaded@marcinjakubowski.github.com
+# php-laravel-valet@rahulhaque
+# quicksettings-audio-devices-hider@marcinjahn.com
+# quicksettings-audio-devices-renamer@marcinjahn.com
+# steal-my-focus-window@steal-my-focus-window
+# tweaks-system-menu@extensions.gnome-shell.fifi.org
+# rx-input-layout-switcher@wzmn.net
+# CustomizeClockOnLockScreen@pratap.fastmail.fm
+# caffeine@patapon.info
+# ding@rastersoft.com
+# tiling-assistant@ubuntu.com
+# ubuntu-appindicators@ubuntu.com
+# ubuntu-dock@ubuntu.com
+# apps-menu@gnome-shell-extensions.gcampax.github.com
+# auto-move-windows@gnome-shell-extensions.gcampax.github.com
+# drive-menu@gnome-shell-extensions.gcampax.github.com
+# launch-new-instance@gnome-shell-extensions.gcampax.github.com
+# light-style@gnome-shell-extensions.gcampax.github.com
+# native-window-placement@gnome-shell-extensions.gcampax.github.com
+# places-menu@gnome-shell-extensions.gcampax.github.com
+# screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com
+# system-monitor@gnome-shell-extensions.gcampax.github.com
+# user-theme@gnome-shell-extensions.gcampax.github.com
+# window-list@gnome-shell-extensions.gcampax.github.com
+# windowsNavigator@gnome-shell-extensions.gcampax.github.com
+# workspace-indicator@gnome-shell-extensions.gcampax.github.com
+
+
 echo "Opening GNOME Extension pages in Chrome..."
 
 for EXT in "${GNOME_EXTENSIONS[@]}"; do

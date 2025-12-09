@@ -4,6 +4,9 @@ set -e
 
 sudo apt-get install -y gnome-shell-extensions curl jq unzip
 
+GNOME_VERSION=$(gnome-shell --version | awk '{print $3}')
+GNOME_VERSION_MAJOR=$(echo "$GNOME_VERSION" | cut -d. -f1)
+
 # GNOME_EXTENSIONS=(
 #     "6670" # bluetooth-battery-meter
 #     "4679" # burn-my-windows
@@ -54,3 +57,55 @@ GNOME_EXTENSIONS_PACKAGES=(
     "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
     "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
 )
+
+install_extension() {
+    local uuid="$1"
+
+    echo "----"
+    echo "Instalando extensão: $uuid"
+
+    if gnome-extensions list | grep -q "$uuid"; then
+        echo "[IGNORADO] Já instalada: $uuid"
+        return
+    fi
+
+    SEARCH_URL="https://extensions.gnome.org/extension-query/?search=$uuid"
+
+    EXT_ID=$(curl -s "$SEARCH_URL" | jq ".extensions[] | select(.uuid==\"$uuid\") | .pk")
+
+    if [ -z "$EXT_ID" ]; then
+        echo "[ERRO] Não foi possível localizar o ID da extensão para: $uuid"
+        return
+    fi
+
+    INFO_URL="https://extensions.gnome.org/extension-info/?pk=$EXT_ID&shell_version=$GNOME_VERSION_MAJOR"
+
+    DOWNLOAD_URL=$(curl -s "$INFO_URL" | jq -r '.download_url')
+
+    if [ "$DOWNLOAD_URL" = "null" ]; then
+        echo "[ERRO] Nenhum pacote disponível para sua versão do GNOME: $uuid"
+        return
+    fi
+
+    ZIP_URL="https://extensions.gnome.org$DOWNLOAD_URL"
+    ZIP_FILE="/tmp/$uuid.zip"
+
+    echo "Baixando: $ZIP_URL"
+    curl -L -o "$ZIP_FILE" "$ZIP_URL"
+
+    echo "Instalando extensão..."
+    gnome-extensions install --force "$ZIP_FILE"
+
+    echo "[OK] Instalada: $uuid"
+
+    rm "$ZIP_FILE"
+}
+
+for extension in "${GNOME_EXTENSIONS_PACKAGES[@]}"; do
+    install_extension "$extension"
+done
+
+echo "-------------------------------------"
+echo "Todas as extensões foram processadas!"
+echo "Reinicie o GNOME (ALT+F2 → r) se estiver no Xorg."
+echo "-------------------------------------"

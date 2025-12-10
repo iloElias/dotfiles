@@ -66,10 +66,10 @@
     "*.svg": "default"
   },
   "[php]": {
-    "php-cs-fixer.config": "${workspaceFolder}/.php-cs-fi xer.php",
-    "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+    "php-cs-fixer.config": "${workspaceFolder}/.php-cs-fixer.php",
+    "editor.defaultFormatter": "junstyle.php-cs-fixer"
   },
-  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.executablePath": "php-cs-fixer",
   "php-cs-fixer.rules": {},
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

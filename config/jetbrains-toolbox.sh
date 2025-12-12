@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.23.11731.tar.gz"
+TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-3.1.2.64642.tar.gz"
 INSTALL_DIR="/opt/jetbrains-toolbox"
 TEMP_DIR="/tmp/jetbrains-toolbox"
 

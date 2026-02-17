@@ -52,6 +52,10 @@ alias e='E'
 alias agfcomposerup='cd /opt/agrofast/ && docker compose up -d && exit'
 alias files='xdg-open ./'
 
+# Display configuration
+alias display='/opt/dotfiles/config/display.sh'
+alias fix-display='/opt/dotfiles/scripts/fix-displays.sh'
+
 alias gcusername='git config user.name iloElias'
 alias gcwork='gcusername && git config user.email "muriloelias@ipeweb.com.br"'
 alias gcpers='gcusername && git config user.email "murilo7456@gmail.com"'

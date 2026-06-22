@@ -12,10 +12,10 @@ echo "|        Installing Chrome...       |";
 echo "-------------------------------------";
 $DOTFILES/config/chrome.sh
 
-echo "-------------------------------------";
-echo "|         Installing PHP...         |";
-echo "-------------------------------------";
-$DOTFILES/config/php.sh
+# echo "-------------------------------------";
+# echo "|         Installing PHP...         |";
+# echo "-------------------------------------";
+# $DOTFILES/config/php.sh
 
 echo "-------------------------------------";
 echo "|       Installing Composer...      |";

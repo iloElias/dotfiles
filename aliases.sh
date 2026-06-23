@@ -15,6 +15,9 @@ alias ipecomposerup='cd /opt/sources/docker-v2/infra && docker compose --profile
 alias ipeclear='docker exec -it php74 bash -c "redis-cli flushall"'
 alias iperedisip='docker inspect php74 | grep "IPAddress"'
 
+alias sastart='/opt/dotfiles/scripts/start-simpleagro.sh'
+alias sastop='/opt/dotfiles/scripts/stop-simpleagro.sh'
+
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'

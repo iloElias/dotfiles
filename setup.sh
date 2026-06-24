@@ -38,6 +38,11 @@ echo "-------------------------------------";
 $DOTFILES/config/vscode.sh
 
 echo "-------------------------------------";
+echo "|   Configuring Copilot globally...  |";
+echo "-------------------------------------";
+$DOTFILES/config/copilot.sh
+
+echo "-------------------------------------";
 echo "|       Setting up jetbrains...      |";
 echo "-------------------------------------";
 $DOTFILES/config/jetbrains-toolbox.sh

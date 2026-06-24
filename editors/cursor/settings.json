@@ -141,6 +141,16 @@
     "editor.defaultFormatter": "DotJoshJohnson.xml"
   },
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "chat.includeApplyingInstructions": true,
+  "chat.includeReferencedInstructions": true,
+  "chat.useAgentsMdFile": true,
+  "chat.useCustomizationsInParentRepositories": true,
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    ".claude/rules": true,
+    "~/.copilot/instructions": true,
+    "~/.claude/rules": true
+  },
   "php-cs-fixer.onsave": true,
   "security.workspace.trust.banner": "always",
   "tailwindSorter.customPrefixes": ["twMerge(", "clsx(", "cva(", "cn("],

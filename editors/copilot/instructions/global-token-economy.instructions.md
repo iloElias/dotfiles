@@ -14,16 +14,26 @@ Use this policy by default unless the user explicitly asks for deep detail.
 - Avoid repeating the user request or repeating the same guidance.
 - Do not add background theory unless needed to complete the task.
 
+## Token Saver Defaults
+- Use terse, action-first wording.
+- No greetings, pleasantries, or filler.
+- No obvious recap.
+- Expand only when user explicitly asks for deep detail.
+
 ## Coding responses
 - Prefer minimal diffs over broad rewrites.
 - Show only the changed snippet when full file context is unnecessary.
 - Keep examples small and runnable.
 - Avoid generating multiple alternative implementations unless asked.
+- Do not refactor outside requested scope.
+- Preserve existing formatting and structure unless required.
 
 ## Prompt and context usage
 - Reuse stable instructions and avoid restating unchanged constraints.
 - When context is long, summarize old turns before continuing.
 - Ask at most one short clarification only when blocked.
+- Keep working context to latest request, latest result, and active constraints.
+- Prefer compact checklists over long narrative plans.
 
 ## Escalation rule
 - If the user asks for "detailed", "thorough", "deep dive", or equivalent, provide expanded detail.

@@ -8,6 +8,10 @@ mkdir -p "$HOME/.copilot/instructions"
 mkdir -p "$HOME/.copilot/skills"
 
 cp -f "$DOTFILES/editors/copilot/instructions/"*.instructions.md "$HOME/.copilot/instructions/"
+for instruction_file in "$DOTFILES/editors/copilot/instructions/"*.instructions.md; do
+  [ -f "$instruction_file" ] || continue
+  echo "Synced instruction: $(basename "$instruction_file")"
+done
 
 # Copy each skill directory so Copilot can discover SKILL.md by folder.
 if [ -d "$DOTFILES/editors/copilot/skills" ]; then
@@ -16,6 +20,7 @@ if [ -d "$DOTFILES/editors/copilot/skills" ]; then
     skill_name=$(basename "$skill_dir")
     mkdir -p "$HOME/.copilot/skills/$skill_name"
     cp -Rf "$skill_dir/"* "$HOME/.copilot/skills/$skill_name/"
+    echo "Synced skill: $skill_name"
   done
 fi
 

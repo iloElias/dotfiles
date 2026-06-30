@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 PROGRAMS=(
-  php8.3
-  php8.3-common
-  php8.3-pgsql
-  php8.3-curl
-  php8.3-dev
-  php8.3-pdo
-  php8.3-mbstring
+  php
+  php-common
+  php-pgsql
+  php-curl
+  php-dev
+  php-pdo
+  php-mbstring
 )
 
 sudo apt update -y

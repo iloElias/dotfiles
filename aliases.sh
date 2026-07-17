@@ -17,6 +17,8 @@ alias iperedisip='docker inspect php74 | grep "IPAddress"'
 
 alias sastart='/opt/dotfiles/scripts/start-simpleagro.sh'
 alias sastop='/opt/dotfiles/scripts/stop-simpleagro.sh'
+alias swapistart='/opt/dotfiles/scripts/start-simple-work-api.sh'
+alias swapistop='/opt/dotfiles/scripts/stop-simple-work-api.sh'
 
 alias ..='cd ../'
 alias ...='cd ../../'

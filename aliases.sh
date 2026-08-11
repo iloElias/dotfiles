@@ -94,6 +94,9 @@ alias ds='docker-stop-all'
 alias down='docker-stop-all'
 alias docker-remove-all='/opt/dotfiles/scripts/remove-all-containers.sh'
 
+# Comandos utilitários para checagem de processos
+alias ports='netstat -tuln'
+
 # variables
 export DOCKER_HOST=unix:///run/docker.sock
 export PATH="$HOME/.composer/vendor/bin:$PATH"

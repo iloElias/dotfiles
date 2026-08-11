@@ -2,9 +2,10 @@
 
 set -euo pipefail
 
-repo_dir="/home/murilo-elias/projects/simple-work-api"
-compose_file="$repo_dir/docker-compose.yml"
-container_name="pyapi-local"
+work_container_name="pyapi-work-local"
+lab_container_name="pyapi-lab-local"
+router_container_name="pyapi-router-local"
+legacy_container_name="pyapi-local"
 painel_dir="/home/murilo-elias/projects/simple-work-painel"
 
 kill_by_cwd() {
@@ -44,15 +45,11 @@ kill_by_cwd() {
 }
 
 main() {
-    echo "[swapistop] Parando container da API..."
-    docker rm -f "$container_name" >/dev/null 2>&1 || true
-
-    if [ -f "$compose_file" ]; then
-        echo "[swapistop] Derrubando stack do compose ($compose_file)..."
-        docker compose -f "$compose_file" down || true
-    else
-        echo "[swapistop] Compose não encontrado, pulando docker compose down."
-    fi
+    echo "[swapistop] Parando containers da API (work/lab/router)..."
+    docker rm -f "$router_container_name" >/dev/null 2>&1 || true
+    docker rm -f "$work_container_name" >/dev/null 2>&1 || true
+    docker rm -f "$lab_container_name" >/dev/null 2>&1 || true
+    docker rm -f "$legacy_container_name" >/dev/null 2>&1 || true
 
     echo "[swapistop] Parando processos do painel..."
     kill_by_cwd "$painel_dir"

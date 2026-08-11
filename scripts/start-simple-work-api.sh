@@ -3,13 +3,45 @@
 set -euo pipefail
 
 repo_dir="/home/murilo-elias/projects/simple-work-api"
-compose_file="$repo_dir/docker-compose.yml"
+base_projects_dir="/home/murilo-elias/projects"
+shared_mongo_dir="$base_projects_dir/mongo"
 image_name="pyapi:http-local"
-container_name="pyapi-local"
-network_name="simple-work-api_default"
+work_container_name="pyapi-work-local"
+lab_container_name="pyapi-lab-local"
+router_container_name="pyapi-router-local"
+legacy_container_name="pyapi-local"
+network_name="swapi-local-net"
 painel_dir="/home/murilo-elias/projects/simple-work-painel"
 painel_log="/tmp/simple-work-painel.log"
 NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+mongo_url="${SWAPI_MONGO_URL:-mongodb://host.docker.internal:27017/test}"
+lab_mongo_url="${SWAPI_LAB_MONGO_URL:-mongodb://host.docker.internal:27017/labdb}"
+router_conf_file="/tmp/swapi-nginx.conf"
+
+find_compose_file() {
+    local dir="$1"
+    local candidates=("docker-compose.yml" "docker-compose.yaml" "docker-compose.iml")
+    for f in "${candidates[@]}"; do
+        if [ -f "$dir/$f" ]; then
+            echo "$dir/$f"
+            return 0
+        fi
+    done
+    return 1
+}
+
+start_shared_mongo() {
+    local compose_file
+    if compose_file=$(find_compose_file "$shared_mongo_dir"); then
+        echo "[swapistart] Subindo Mongo compartilhado (mesmo do sastart): $compose_file"
+        if ! docker compose -f "$compose_file" up -d 2>/tmp/swapistart_mongo_error.log; then
+            echo "[swapistart] Falha ao subir Mongo compartilhado. Ver /tmp/swapistart_mongo_error.log" >&2
+            sed -n '1,120p' /tmp/swapistart_mongo_error.log >&2 || true
+        fi
+    else
+        echo "[swapistart] Compose do Mongo não encontrado em $shared_mongo_dir" >&2
+    fi
+}
 
 build_image_if_missing() {
     if docker image inspect "$image_name" >/dev/null 2>&1; then
@@ -41,10 +73,10 @@ RUN python -m pip install pip --upgrade && \
     python -m pip install --no-cache-dir gunicorn
 ENV PYTHONPATH=/app
 EXPOSE 8000
-CMD ["/start.sh"]
 ENV VARIABLE_NAME=app
 COPY app/. /app/app/
 COPY migrations/. /app/migrations/
+CMD ["/start.sh"]
 EOF
 }
 
@@ -75,31 +107,59 @@ start_painel() {
     echo "[swapistart] Log do painel: $painel_log"
 }
 
-main() {
-    if [ ! -d "$repo_dir" ]; then
-        echo "[swapistart] Diretório não encontrado: $repo_dir" >&2
-        exit 1
-    fi
+ensure_network() {
+    docker network inspect "$network_name" >/dev/null 2>&1 || docker network create "$network_name" >/dev/null
+}
 
-    if [ ! -f "$compose_file" ]; then
-        echo "[swapistart] Arquivo não encontrado: $compose_file" >&2
-        exit 1
-    fi
+write_router_conf() {
+    cat > "$router_conf_file" <<EOF
+server {
+    listen 8000;
+    server_name _;
 
-    echo "[swapistart] Subindo Mongo via docker compose..."
-    docker compose -f "$compose_file" up -d mongo
+    location = /workapi {
+        return 301 /workapi/;
+    }
 
-    build_image_if_missing
+    location = /labapi {
+        return 301 /labapi/;
+    }
 
-    echo "[swapistart] Reiniciando container da API..."
-    docker rm -f "$container_name" >/dev/null 2>&1 || true
+    location /workapi/ {
+        proxy_pass http://$work_container_name:8000/workapi/;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+
+    location /labapi/ {
+        proxy_pass http://$lab_container_name:8000/labapi/;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOF
+}
+
+start_api_containers() {
+    echo "[swapistart] Reiniciando containers Work/Lab da API..."
+
+    docker rm -f "$legacy_container_name" >/dev/null 2>&1 || true
+    docker rm -f "$work_container_name" >/dev/null 2>&1 || true
+    docker rm -f "$lab_container_name" >/dev/null 2>&1 || true
+    docker rm -f "$router_container_name" >/dev/null 2>&1 || true
 
     docker run -d \
-        --name "$container_name" \
+        --name "$work_container_name" \
         --network "$network_name" \
-        -p 8000:8000 \
+        --add-host host.docker.internal:host-gateway \
+        -e VARIABLE_NAME=app \
         -e APP_DEBUG=1 \
-        -e MONGO_URL=mongodb://mongo:27017/test \
+        -e MONGO_URL="$mongo_url" \
+        -e LAB_MONGO_URL="$lab_mongo_url" \
         -e APP_MODE=DEVELOPMENT \
         -e SKIP_AUTH=1 \
         -e API_SALES_URL=http://localhost \
@@ -109,11 +169,56 @@ main() {
         -e PRE_START_PATH=/no-prestart.sh \
         -v "$repo_dir/app:/app/app" \
         -v "$repo_dir/migrations:/app/migrations" \
-        "$image_name" >/tmp/simple-work-api_container_id.log
+        "$image_name" >/tmp/simple-work-api_work_container_id.log
 
-    echo "[swapistart] API iniciada em http://localhost:8000"
+    docker run -d \
+        --name "$lab_container_name" \
+        --network "$network_name" \
+        --add-host host.docker.internal:host-gateway \
+        -e VARIABLE_NAME=lab_app \
+        -e APP_DEBUG=1 \
+        -e MONGO_URL="$mongo_url" \
+        -e LAB_MONGO_URL="$lab_mongo_url" \
+        -e APP_MODE=DEVELOPMENT \
+        -e SKIP_AUTH=1 \
+        -e API_SALES_URL=http://localhost \
+        -e CACHE_ENABLED=0 \
+        -e STREAM_CONSUMER_ENABLED=0 \
+        -e STREAM_PUBLISHER_ENABLED=0 \
+        -e PRE_START_PATH=/no-prestart.sh \
+        -v "$repo_dir/app:/app/app" \
+        -v "$repo_dir/migrations:/app/migrations" \
+        "$image_name" >/tmp/simple-work-api_lab_container_id.log
+
+    write_router_conf
+
+    docker run -d \
+        --name "$router_container_name" \
+        --network "$network_name" \
+        -p 8000:8000 \
+        -v "$router_conf_file:/etc/nginx/conf.d/default.conf:ro" \
+        nginx:alpine >/tmp/simple-work-api_router_container_id.log
+}
+
+main() {
+    if [ ! -d "$repo_dir" ]; then
+        echo "[swapistart] Diretório não encontrado: $repo_dir" >&2
+        exit 1
+    fi
+
+    start_shared_mongo
+
+    build_image_if_missing
+
+    ensure_network
+    start_api_containers
+
+    echo "[swapistart] APIs Work e Lab iniciadas ao mesmo tempo em http://localhost:8000"
     echo "[swapistart] Swagger Work: http://localhost:8000/workapi/docs"
-    echo "[swapistart] Logs: docker logs -f $container_name"
+    echo "[swapistart] Swagger Lab: http://localhost:8000/labapi/docs"
+    echo "[swapistart] Logs Work: docker logs -f $work_container_name"
+    echo "[swapistart] Logs Lab: docker logs -f $lab_container_name"
+    echo "[swapistart] Logs Router: docker logs -f $router_container_name"
 
     start_painel
 }

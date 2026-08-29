@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /opt/dotfiles/lib/utils.sh
+source $HOME/dotfiles/lib/utils.sh
 
 ignore_excluded=false
 
@@ -10,7 +10,7 @@ for arg in "$@"; do
   esac
 done
 
-/opt/dotfiles/scripts/stop-all-containers.sh ${ignore_excluded:+--ignore-excluded}
+$HOME/dotfiles/scripts/stop-all-containers.sh ${ignore_excluded:+--ignore-excluded}
 
 mapfile -t containers_to_remove < <(get_target_containers "$ignore_excluded")
 

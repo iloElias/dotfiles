@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export DOTFILES=/opt/dotfiles
+export DOTFILES=$HOME/dotfiles
 
 echo "-------------------------------------";
 echo "|     Getting latests updates...    |";
@@ -12,15 +12,10 @@ echo "|        Installing Chrome...       |";
 echo "-------------------------------------";
 $DOTFILES/config/chrome.sh
 
-# echo "-------------------------------------";
-# echo "|         Installing PHP...         |";
-# echo "-------------------------------------";
-# $DOTFILES/config/php.sh
-
 echo "-------------------------------------";
-echo "|       Installing Composer...      |";
+echo "|         Installing PHP...         |";
 echo "-------------------------------------";
-$DOTFILES/config/composer.sh
+$DOTFILES/config/php.sh
 
 echo "-------------------------------------";
 echo "|        Installing Docker...       |";

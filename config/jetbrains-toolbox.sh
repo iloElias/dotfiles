@@ -44,7 +44,7 @@ cat > "$DESKTOP_ENTRY" <<EOL
 Type=Application
 Name=Toolbox
 Exec=$BIN_PATH
-Icon=/opt/dotfiles/public/img/jetbrains-toolbox.ico
+Icon=$HOME/dotfiles/public/img/jetbrains-toolbox.ico
 Categories=Development;IDE;
 Comment=JetBrains Toolbox
 Terminal=false

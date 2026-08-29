@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /opt/dotfiles/lib/utils.sh
+source $HOME/dotfiles/lib/utils.sh
 
 force_stop=false
 ignore_excluded=false

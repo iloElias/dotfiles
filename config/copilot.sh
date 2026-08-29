@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-DOTFILES=${DOTFILES:-/opt/dotfiles}
+DOTFILES=${DOTFILES:-$HOME/dotfiles}
 
 mkdir -p "$HOME/.copilot/instructions"
 mkdir -p "$HOME/.copilot/skills"

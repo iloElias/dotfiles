@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source /opt/dotfiles/lib/utils.sh
+source $HOME/dotfiles/lib/utils.sh
 
 # alias
 
@@ -8,17 +8,17 @@ alias ll='ls -alF --color=auto --group-directories-first'
 alias la='ls -A --color=auto --group-directories-first'
 alias l='ls -CF --color=auto --group-directories-first'
 
-alias update='/opt/dotfiles/config/update.sh'
-alias update-rc='/opt/dotfiles/config/update-rc.sh'
+alias update='$HOME/dotfiles/config/update.sh'
+alias update-rc='$HOME/dotfiles/config/update-rc.sh'
 
 alias ipecomposerup='cd /opt/sources/docker-v2/infra && docker compose --profile dev up -d && exit'
 alias ipeclear='docker exec -it php74 bash -c "redis-cli flushall"'
 alias iperedisip='docker inspect php74 | grep "IPAddress"'
 
-alias sastart='/opt/dotfiles/scripts/start-simpleagro.sh'
-alias sastop='/opt/dotfiles/scripts/stop-simpleagro.sh'
-alias swapistart='/opt/dotfiles/scripts/start-simple-work-api.sh'
-alias swapistop='/opt/dotfiles/scripts/stop-simple-work-api.sh'
+alias sastart='$HOME/dotfiles/scripts/start-simpleagro.sh'
+alias sastop='$HOME/dotfiles/scripts/stop-simpleagro.sh'
+alias swapistart='$HOME/dotfiles/scripts/start-simple-work-api.sh'
+alias swapistop='$HOME/dotfiles/scripts/stop-simple-work-api.sh'
 
 alias ..='cd ../'
 alias ...='cd ../../'
@@ -28,20 +28,20 @@ alias .....='cd ../../../../'
 alias cls='clear'
 alias clr='clear'
 alias ccat='pygmentize -g'
-alias code='code-insiders'
+alias code='code-insiders --disable-gpu'
 alias nav='google-chrome'
 
 alias here='/bin/gnome-terminal --working-directory=$(pwd)'
 alias new="/bin/gnome-terminal --working-directory=\$HOME"
 
-alias ccd='/opt/dotfiles/scripts/custom-cd.sh'
+alias ccd='$HOME/dotfiles/scripts/custom-cd.sh'
 
-alias cdi='/opt/dotfiles/scripts/custom-cd.sh /opt/sources'
+alias cdi='$HOME/dotfiles/scripts/custom-cd.sh /opt/sources'
 alias cdipe='cd /opt/sources/'
 alias cdm='cd /opt/mapdata/'
 alias cdaf='cd /opt/agrofast/'
 alias cds='cd /opt/services/'
-alias cdd='cd /opt/dotfiles/'
+alias cdd='cd $HOME/dotfiles/'
 
 E() {
   echo -n "Confirm action? (Y/n) "
@@ -58,8 +58,8 @@ alias agfcomposerup='cd /opt/agrofast/ && docker compose up -d && exit'
 alias files='xdg-open ./'
 
 # Display configuration
-alias display='/opt/dotfiles/config/display.sh'
-alias fix-display='/opt/dotfiles/scripts/fix-displays.sh'
+alias display='$HOME/dotfiles/scripts/display.sh'
+alias fix-display='$HOME/dotfiles/scripts/fix-displays.sh'
 
 alias gcusername='git config user.name iloElias'
 alias gcwork='gcusername && git config user.email "muriloelias@ipeweb.com.br"'
@@ -71,13 +71,13 @@ alias checkmaster='git checkout master'
 alias gmaster='git checkout master'
 alias gmain='git checkout main'
 alias push='git push'
-alias vpush='/opt/dotfiles/scripts/push-with-verifications.sh'
-alias status='/opt/dotfiles/scripts/status-all-from-repo.sh'
-alias pull='/opt/dotfiles/scripts/pull-all-from-repo.sh'
+alias vpush='$HOME/dotfiles/scripts/push-with-verifications.sh'
+alias status='$HOME/dotfiles/scripts/status-all-from-repo.sh'
+alias pull='$HOME/dotfiles/scripts/pull-all-from-repo.sh'
 alias gadd='git add .'
 alias clone='git clone'
 
-alias myip='/opt/dotfiles/scripts/my-ip.sh'
+alias myip='$HOME/dotfiles/scripts/my-ip.sh'
 
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias up='docker compose up'
@@ -87,12 +87,12 @@ alias build='docker compose up --build'
 alias dexec='docker exec -it'
 
 # Comandos utilitários para desenvolvimento com docker
-alias dbcls='/opt/dotfiles/scripts/reset-database.sh'
+alias dbcls='$HOME/dotfiles/scripts/reset-database.sh'
 
-alias docker-stop-all='/opt/dotfiles/scripts/stop-all-containers.sh'
+alias docker-stop-all='$HOME/dotfiles/scripts/stop-all-containers.sh'
 alias ds='docker-stop-all'
 alias down='docker-stop-all'
-alias docker-remove-all='/opt/dotfiles/scripts/remove-all-containers.sh'
+alias docker-remove-all='$HOME/dotfiles/scripts/remove-all-containers.sh'
 
 # Comandos utilitários para checagem de processos
 alias ports='netstat -tuln'

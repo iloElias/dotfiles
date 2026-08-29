@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /opt/dotfiles/data/excluded-containers.sh
+source $HOME/dotfiles/data/excluded-containers.sh
 
 get_target_containers() {
   local ignore_excluded=${1:-false}

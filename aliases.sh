@@ -106,3 +106,14 @@ export PATH=$PATH:~/godot
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH=$PATH:/usr/local/go/bin
 export CAPACITOR_ANDROID_STUDIO_PATH="$HOME/.local/share/JetBrains/Toolbox/apps/AndroidStudio/ch-0/242.23339.11.2421.12550806"
+
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export DOTNET_ROOT=/usr/lib/dotnet
+export PATH=$PATH:$DOTNET_ROOT
+
+export JAVA_HOME=/usr/lib/jvm/jdk-25.0.4.1+1
+
+

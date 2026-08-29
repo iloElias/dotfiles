@@ -54,6 +54,8 @@
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "cSpell.diagnosticLevel": "Hint",
   "cSpell.language": "en,pt",
+  "cSpell.spellCheckDelayMs": 1000,
+  "cSpell.checkLimit": 200,
   "css.validate": false,
   "database-client.autoSync": true,
   "debug.console.fontFamily": "Fira Code",
@@ -88,10 +90,12 @@
       "color": "#a3b8ff19"
     }
   ],
-  "editor.semanticHighlighting.enabled": true,
+  "editor.semanticHighlighting.enabled": false,
   "editor.smoothScrolling": false,
   "editor.stickyScroll.enabled": false,
-  "editor.unicodeHighlight.includeComments": true,
+  "editor.hover.delay": 600,
+  "editor.wordBasedSuggestions": "off",
+  "editor.unicodeHighlight.includeComments": false,
   "emmet.variables": {
     "lang": "en"
   },
@@ -103,7 +107,7 @@
     ".env": "dotenv",
     "*.css": "tailwindcss"
   },
-  "files.autoGuessEncoding": true,
+  "files.autoGuessEncoding": false,
   "files.exclude": {
     "**/.sst": true,
     "**/.turbo": true
@@ -114,6 +118,10 @@
     "**/.turbo/**": true,
     "**/*.map": true,
     "**/node_modules/**": true,
+    "**/vendor/**": true,
+    "**/.venv/**": true,
+    "**/target/**": true,
+    "**/build/**": true,
     "**/dist/**": true,
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true
@@ -121,7 +129,7 @@
   "git.autofetch": true,
   "git.autorefresh": true,
   "git.confirmSync": false,
-  "git.decorations.enabled": true,
+  "git.decorations.enabled": false,
   "git.enableSmartCommit": true,
   "git.openRepositoryInParentFolders": "always",
   "github.copilot.enable": {
@@ -148,8 +156,8 @@
     "maestro.config.php": "php_elephant"
   },
   "php-cs-fixer.allowRisky": true,
-  "php-cs-fixer.autoFixByBracket": true,
-  "php-cs-fixer.autoFixBySemicolon": true,
+  "php-cs-fixer.autoFixByBracket": false,
+  "php-cs-fixer.autoFixBySemicolon": false,
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
   "php-cs-fixer.formatHtml": true,
   "php-cs-fixer.lastDownload": 1762104640829,
@@ -163,8 +171,10 @@
     "**/.sst/**": true,
     "**/*.map": true,
     "**/node_modules": true,
+    "**/vendor": true,
     "**/dist": true
   },
+  "search.followSymlinks": false,
   "security.workspace.trust.banner": "always",
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.ignoredSettings": ["-window.zoomLevel"],
@@ -217,7 +227,6 @@
   "typescript.updateImportsOnFileMove.enabled": "never",
   "update.mode": "manual",
   "window.customTitleBarVisibility": "auto",
-  "window.titleBarStyle": "custom",
   "window.zoomLevel": -1.2,
   "workbench.colorCustomizations": {
     "[Default Dark Modern]": {
@@ -240,6 +249,7 @@
   "workbench.iconTheme": "vscode-great-icons",
   "workbench.list.smoothScrolling": false,
   "workbench.reduceMotion": "on",
+  "workbench.tree.enableStickyScroll": false,
   "workbench.settings.applyToAllProfiles": [
     "terminal.integrated.defaultProfile.linux"
   ]

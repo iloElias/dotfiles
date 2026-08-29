@@ -114,6 +114,4 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export DOTNET_ROOT=/usr/lib/dotnet
 export PATH=$PATH:$DOTNET_ROOT
 
-export JAVA_HOME=/usr/lib/jvm/jdk-25.0.4.1+1
-
-
+export JAVA_HOME="/usr/lib/jvm/jdk-25.0.4.1+1"

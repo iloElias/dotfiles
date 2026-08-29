@@ -105,13 +105,21 @@ export PATH=$PATH:/usr/share/dotnet
 export PATH=$PATH:~/godot
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH=$PATH:/usr/local/go/bin
+
 export CAPACITOR_ANDROID_STUDIO_PATH="$HOME/.local/share/JetBrains/Toolbox/apps/AndroidStudio/ch-0/242.23339.11.2421.12550806"
 
+# Android SDK
 export ANDROID_HOME="$HOME/Android/Sdk"
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
 
-export DOTNET_ROOT=/usr/lib/dotnet
-export PATH=$PATH:$DOTNET_ROOT
+export PATH="$ANDROID_HOME/emulator:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 
-export JAVA_HOME="/usr/lib/jvm/jdk-25.0.4.1+1"
+# Java
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+# .NET
+export DOTNET_ROOT="/usr/lib/dotnet"
+export PATH="$DOTNET_ROOT:$PATH"

@@ -28,7 +28,7 @@ alias .....='cd ../../../../'
 alias cls='clear'
 alias clr='clear'
 alias ccat='pygmentize -g'
-alias code='code-insiders --disable-gpu'
+alias code='code-insiders --disable-gpu --no-sandbox'
 alias nav='google-chrome'
 
 alias here='/bin/gnome-terminal --working-directory=$(pwd)'

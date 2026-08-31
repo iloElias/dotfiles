@@ -5,47 +5,47 @@ export DOTFILES=$HOME/dotfiles
 echo "-------------------------------------";
 echo "|     Getting latests updates...    |";
 echo "-------------------------------------";
-$DOTFILES/config/update.sh
+"$DOTFILES/config/update.sh"
 
 echo "-------------------------------------";
 echo "|        Installing Chrome...       |";
 echo "-------------------------------------";
-$DOTFILES/config/chrome.sh
+"$DOTFILES/config/chrome.sh"
 
 echo "-------------------------------------";
 echo "|         Installing PHP...         |";
 echo "-------------------------------------";
-$DOTFILES/config/php.sh
+"$DOTFILES/config/php.sh"
 
 echo "-------------------------------------";
 echo "|        Installing Docker...       |";
 echo "-------------------------------------";
-$DOTFILES/config/docker.sh
+"$DOTFILES/config/docker.sh"
 
 echo "-------------------------------------";
 echo "|         Installing Node...        |";
 echo "-------------------------------------";
-$DOTFILES/config/node.sh
+"$DOTFILES/config/node.sh"
 
 echo "-------------------------------------";
 echo "|        Installing VSCode...       |";
 echo "-------------------------------------";
-$DOTFILES/config/vscode.sh
+"$DOTFILES/config/vscode.sh"
 
 echo "-------------------------------------";
 echo "|   Configuring Copilot globally...  |";
 echo "-------------------------------------";
-$DOTFILES/config/copilot.sh
+"$DOTFILES/config/copilot.sh"
 
-echo "-------------------------------------";
-echo "|       Setting up jetbrains...      |";
-echo "-------------------------------------";
-$DOTFILES/config/jetbrains-toolbox.sh
+# echo "-------------------------------------";
+# echo "|       Setting up jetbrains...      |";
+# echo "-------------------------------------";
+# "$DOTFILES/config/jetbrains-toolbox.sh"
 
 echo "-------------------------------------";
 echo "|       Setting up terminal...      |";
 echo "-------------------------------------";
-$DOTFILES/config/terminal.sh
+"$DOTFILES/config/terminal.sh"
 
-cp $DOTFILES/.inputrc ~/
+cp "$DOTFILES/.inputrc" "$HOME/"
 bind -f $HOME/.inputrc

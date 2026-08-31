@@ -36,7 +36,7 @@ function getDockerProcesses() {
 
 $columns = [
     'Image',
-    'Status',
+    // 'Status',
     'Ports',
     'RunningFor',
     'Size',

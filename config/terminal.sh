@@ -21,4 +21,4 @@ unzip $HOME/.fonts/MesloLGSNF.zip -d $HOME/.fonts
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 read -r "copy_zshrc?Substituir .zshrc do usuário? (y/N) "
-[[ "$copy_zshrc" =~ ^[Yy]$ ]] && cp $HOME/.zshrc $HOME/dotfiles/temp/.zshrc && cp $HOME/dotfiles/.zshrc $HOME/.zshrc
+[[ "$copy_zshrc" =~ ^[Yy]$ ]] && (cp $HOME/.zshrc $HOME/dotfiles/tmp/.zshrc && cp $HOME/dotfiles/.zshrc $HOME/.zshrc)

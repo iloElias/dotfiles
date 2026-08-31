@@ -2,7 +2,7 @@
 
 sudo apt install nodejs npm
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/refs/heads/master/install.sh | bash
 
 nvm install 23
 
